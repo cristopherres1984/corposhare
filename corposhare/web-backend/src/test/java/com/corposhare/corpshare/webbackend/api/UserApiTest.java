@@ -13,9 +13,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * @author adrzewiecki
- */
+
 @WebMvcTest
 @Import(Dostep.class)
 @ExtendWith(SpringExtension.class)
