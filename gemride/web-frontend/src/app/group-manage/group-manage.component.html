@@ -1,0 +1,86 @@
+<mat-sidenav-container class="sidenav-container mat-elevation-z8">
+    <mat-sidenav #drawer
+                 class="sidenavChat"
+                 [(opened)]="isOpen"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 fixedInViewport="false">
+        <app-sidenav-chat></app-sidenav-chat>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="div-sidenav-content">
+            <div class="container">
+                <img src="../../assets/other/calendar.png" class="logo" alt="...">
+            </div>
+            <div class="text">
+                <div class="bigtext">
+                    Pick date in calendar and chose action:
+                </div>
+                <hr>
+                <br>
+                <div class="line">
+                Can't drive on marked days
+                <button mat-raised-button color="primary">
+                    <mat-icon aria-label="user-settings">arrow_forward</mat-icon>
+                </button>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="line">
+                Pick user to switch in marked days
+                <button mat-raised-button color="primary">
+                    <mat-icon aria-label="user-settings">arrow_forward</mat-icon>
+                </button>
+                </div>
+
+                <mat-form-field>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Krzysztof</mat-option>
+                        <mat-option value="option2">Lukasz</mat-option>
+                        <mat-option value="option3">Borys</mat-option>
+                        <mat-option value="option4">Maciej</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <hr>
+
+                <div class="line">
+                Pick user to drive in marked days
+                <button mat-raised-button color="primary">
+                    <mat-icon aria-label="user-settings">arrow_forward</mat-icon>
+                </button>
+                </div>
+
+                <mat-form-field>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Krzysztof</mat-option>
+                        <mat-option value="option2">Lukasz</mat-option>
+                        <mat-option value="option3">Borys</mat-option>
+                        <mat-option value="option4">Maciej</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <hr>
+
+                <div class="line">
+                    Drop user from the team
+                    <button mat-raised-button color="primary">
+                        <mat-icon aria-label="user-settings">arrow_forward</mat-icon>
+                    </button>
+                </div>
+
+                <mat-form-field>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Krzysztof</mat-option>
+                        <mat-option value="option2">Lukasz</mat-option>
+                        <mat-option value="option3">Borys</mat-option>
+                        <mat-option value="option4">Maciej</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,107 @@
+mat-card{
+    display: flex;
+    flex-direction: row;
+    /*width: 100%;*/
+}
+
+.formOnMedia{
+    display: none;
+
+}
+
+.mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px){
+    .container, mat-card,  app-map {
+        flex-direction: column;
+        width: 100% !important;
+        font-size: 10px;
+    }
+
+    .sliderStart, .sliderEnd{
+        display: none !important;
+    }
+
+    .formMediaWidth{
+        width: 30%;
+    }
+    .formOnMedia{
+        display: inline;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    app-map{
+        margin-left: 0% !important;
+
+    }
+
+}
+
+
+app-map{
+    height: 550px;
+    width: 100%;
+    margin-left: 2%;
+
+}
+
+.smallerFont {
+    font-size: 12px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    font-size: 14px;
+}
+
+p{
+    width: 15%;
+}
+
+mat-form-field, .sliderStart,.sliderEnd, input {
+    width: 100%;
+}
+
+mat-form-field{
+    margin-bottom: -13px;
+}
+
+mat-slider{
+    width: 100%;
+}
+
+.repeatWaypointsColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderStart, .sliderEnd, .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save{
+    font-size: 24px;
+
+}
+
+.save2{
+    margin-bottom: 10px;
+}
+
+
+
+

@@ -1,0 +1,22 @@
+.sidenav{
+    width: 350px;
+
+}
+
+@media (max-width: 767px){
+    .sidenav {
+        width:100%;
+    }
+}
+
+.sidenav-toolbar{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+app-map{
+
+    height: 700px;
+}

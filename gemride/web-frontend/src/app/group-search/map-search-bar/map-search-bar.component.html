@@ -1,0 +1,11 @@
+<mat-card class="over_map">
+    <mat-form-field appearance="standard">
+        <mat-label>Group search</mat-label>
+        <input #search matInput placeholder="Enter starting point..." type="text" [formControl]="searchField"
+               [matAutocomplete]="auto" (keyup.enter)="onEnter(search.value)">
+        <mat-icon *ngIf="search.value.length > 0" matSuffix (click)="onClear(); search.value=''">clear</mat-icon>
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete" [autoActiveFirstOption]="true" (optionSelected)="onSelected($event)">
+        <mat-option *ngFor="let option of (options | async)" [value]="option">{{option}}</mat-option>
+    </mat-autocomplete>
+</mat-card>

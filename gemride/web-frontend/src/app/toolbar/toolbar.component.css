@@ -1,0 +1,29 @@
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.logo {
+    margin-top: 5px;
+    max-width: 140px;
+    min-width: 28px;
+
+    min-height: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 767px){
+    .iconsOnly {
+        display: none;
+    }
+}
+
+
+
+.button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

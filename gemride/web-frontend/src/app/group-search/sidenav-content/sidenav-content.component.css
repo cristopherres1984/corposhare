@@ -1,0 +1,54 @@
+
+
+.expansion-container {
+    margin: 4px 2px 0px 2px;
+}
+
+mat-panel-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-hours {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#span-fixed-text-id1 {
+    align-self: flex-end;
+    font-weight: 200;
+}
+
+.div-join-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px;
+    text-align: justify;
+}
+
+.span-variables {
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 1em 0;
+    padding: 0;;
+}
+
+.span-description {
+    width: 100%;
+    font-style: oblique;
+    font-size: 16px;
+    text-align: justify;
+}

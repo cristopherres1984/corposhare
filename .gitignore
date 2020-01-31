@@ -1,0 +1,11 @@
+.idea/
+.hg/
+.hgignore
+.hgtags
+Jenkins*
+*.iml
+target/
+node_modules/
+*.class
+*.jar
+*.war

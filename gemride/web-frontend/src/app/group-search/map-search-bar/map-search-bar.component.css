@@ -1,0 +1,17 @@
+.over_map {
+    width: 400px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .over_map {
+        width: 90%;
+    }
+}

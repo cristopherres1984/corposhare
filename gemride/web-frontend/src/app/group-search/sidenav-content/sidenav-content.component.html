@@ -1,0 +1,34 @@
+<mat-accordion>
+    <div class="expansion-container" *ngFor="let group of groupList | async">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <div>
+                        <span class="span-variables">{{group.name}}</span>
+                    </div>
+                    <div>
+                        <span class="span-variables">{{group.distance}}</span>
+                        <span class="span-fixed-text" id="span-fixed-text-id1">&nbsp;km</span>
+                    </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <hr>
+            <div>
+                <ng-template matExpansionPanelContent>
+                    <div class="div-hours">
+                        <div class="div-hours"><span class="span-fixed-text">Start time:&nbsp;</span>
+                            <span class="span-variables">{{group.start}}</span></div>
+                        <div class="div-hours"><span class="span-fixed-text">Return time:&nbsp;</span>
+                            <span class="span-variables">{{group.return}}</span></div>
+                    </div>
+                    <hr>
+                    <div class="span-description">{{group.description}}</div>
+                    <hr>
+                    <div class="div-join-button">
+                        <button mat-raised-button color="primary">JOIN</button>
+                    </div>
+                </ng-template>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</mat-accordion>

@@ -1,0 +1,98 @@
+<mat-card >
+    <div class="container">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Group name</mat-label>
+            <input matInput #groupName placeholder="Enter group name..." type="text">
+            <mat-icon matSuffix (click)="groupName.value=''">clear</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Startpoint</mat-label>
+            <input #searchStart matInput placeholder="Enter starting point..." type="text"
+                   [formControl]="searchFieldStartpoint"
+                   [matAutocomplete]="autoStart" (keyup.enter)="onEnter(searchStart.value)">
+            <mat-icon *ngIf="searchStart.value.length > 0" matSuffix (click)="onClearStart(); searchStart.value=''">
+                clear
+            </mat-icon>
+            <mat-autocomplete #autoStart="matAutocomplete" [autoActiveFirstOption]="true"
+                              (optionSelected)="onSelected($event)">
+                <mat-option *ngFor="let optionStart of (optionsStart | async)" [value]="optionStart">{{optionStart}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <div *ngIf="waypointsList.length > 0" class="repeatWaypointsColumn">
+            <mat-form-field appearance="outline" *ngFor="let waypoint of waypointsList;let i=index">
+                <mat-label>Waypoint</mat-label>
+                <input #wayPoint matInput placeholder="Enter waypoint..." type="text"
+                       [formControl]="searchFieldWaypoint"
+                       [matAutocomplete]="autoWaypoint" (keyup.enter)="onEnter(wayPoint.value)">
+                <mat-icon matSuffix (click)="onRemoveClick(i)" color="primary">remove_circle_outline</mat-icon>
+                <mat-autocomplete #autoWaypoint="matAutocomplete" [autoActiveFirstOption]="true"
+                                  (optionSelected)="onSelected($event)">
+                    <mat-option *ngFor="let optionWaypoint of (optionsWaypoint | async)" [value]="optionWaypoint">{{optionWaypoint}}</mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Endpoint</mat-label>
+            <input #searchEnd matInput placeholder="Enter endpoint..." type="text" [formControl]="searchFieldEndpoint"
+                   [matAutocomplete]="autoEnd" (keyup.enter)="onEnter(searchEnd.value)">
+            <mat-icon *ngIf="searchEnd.value.length > 0" matSuffix (click)="onClearEnd(); searchEnd.value=''">clear
+            </mat-icon>
+            <mat-autocomplete #autoEnd="matAutocomplete" [autoActiveFirstOption]="true"
+                              (optionSelected)="onSelected($event)">
+                <mat-option *ngFor="let optionEnd of (optionsEnd | async)" [value]="optionEnd">{{optionEnd}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+
+           <div class="mid">
+               <button mat-mini-fab (click)="onAddClick()" color="primary">
+                <mat-icon aria-label="Add waypoint">add</mat-icon>
+                </button> &nbsp; Add waypoint
+           </div>
+
+
+        <div class="sliderStart">
+            <p>Start: <span>{{formatLabel(8)}}</span></p>
+            <mat-slider class="slider3" color="primary" thumbLabel [displayWith]="formatLabel"
+                        tickInterval="1" step="0.5" min="1" max="24" value="12" (change)="onChangeRange($event)">
+            </mat-slider>
+        </div>
+
+        <div class="formOnMedia">
+            <div>Start: </div>
+            <mat-form-field appearance="outline" class="formMediaWidth" >
+                <input matInput placeholder="hh:mm" type="text">
+            </mat-form-field>
+            <div>Return: </div>
+            <mat-form-field appearance="outline" class="formMediaWidth">
+                <input matInput placeholder="hh:mm" type="text">
+            </mat-form-field>
+        </div>
+
+
+        <div class="sliderEnd">
+            <p>Return: <span>{{formatLabel(16)}}</span></p>
+            <mat-slider class="slider3" color="primary" thumbLabel [displayWith]="formatLabel"
+                        tickInterval="1" step="0.5" min="1" max="24" value="12" (change)="onChangeRange2($event)">
+            </mat-slider>
+        </div>
+
+        <div class="row smallerFont">
+            <mat-checkbox color="primary">Appear in searches</mat-checkbox>
+            <mat-checkbox color="primary">Only drivers</mat-checkbox>
+
+        <button mat-raised-button color="primary" class="save2">
+            <span class="save">SAVE &nbsp;</span>
+            <mat-icon aria-label="user-settings">save</mat-icon>
+        </button>
+        </div>
+    </div>
+    <app-map></app-map>
+</mat-card>
+
